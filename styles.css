@@ -1,3 +1,4 @@
+
 :root {
   --box-position: 80px; /* Position verticale des boîtes */
   --box-scale-hover: 1.2; /* Agrandissement des boîtes */
@@ -166,5 +167,223 @@ footer p {
 
   .category-box {
     height: 200px;
+  }
+}
+/* Responsive Design */
+
+/* Masque le Hero Text sur mobile */
+@media (max-width: 640px) {
+  .hero-text {
+    display: none; /* Masque le texte de la bannière */
+  }
+}
+/* Design spécifique pour mobile (max-width: 640px) */
+@media (max-width: 640px) {
+  .banner {
+    height: 100vh; /* La bannière occupe tout l'écran sur mobile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/marble.jpg') center/cover no-repeat; /* Image de la bannière */
+  }
+
+  .banner .logo {
+    position: relative; /* Centré par rapport à la bannière */
+    top: auto; /* Supprime les positions spécifiques */
+    left: auto;
+    transform: none; /* Aucune transformation supplémentaire */
+    width: 150px; /* Taille ajustée du logo pour mobile */
+    height: 150px;
+    border-radius: 50%; /* Garde le logo circulaire */
+  }
+
+  .box-container {
+    display: block; /* Les boîtes s'empilent les unes sous les autres */
+    margin: 0 auto; /* Centrage horizontal */
+    width: 100%; /* Les boîtes occupent toute la largeur */
+  }
+
+  .category-box {
+    display: block;
+    width: 100%; /* Chaque boîte prend toute la largeur */
+    margin-bottom: 20px; /* Ajoute un espace entre les boîtes */
+  }
+
+  .category-box img {
+    width: 100%; /* Image à la largeur de la boîte */
+    height: auto; /* Hauteur proportionnelle à l'image */
+    object-fit: cover; /* Ajuste l'image si nécessaire */
+  }
+
+  .category-content {
+    display: none; /* Cache le texte superposé sur les boîtes pour plus de lisibilité */
+  }
+}
+@media (max-width: 640px) {
+  .category-box:nth-child(1) img {
+    content: url('./images/salonmobile.png'); /* Remplace l'image de la 1ère boîte */
+  }
+
+  .category-box:nth-child(2) img {
+    content: url('./images/prestationmobile.png'); /* Remplace l'image de la 2ème boîte */
+  }
+
+  .category-box:nth-child(3) img {
+    content: url('./images/galeriemobile.png'); /* Remplace l'image de la 3ème boîte */
+  }
+
+  .category-box:nth-child(4) img {
+    content: url('./images/contactmobile.png'); /* Remplace l'image de la 4ème boîte */
+  }
+}
+/* Centrer les images dans les boîtes sur mobile */
+@media (max-width: 640px) {
+  .category-box img {
+    object-fit: cover; /* Garde les proportions de l'image */
+    object-position: center; /* Centre l'image dans la boîte */
+    width: 100%; /* Remplit toute la largeur de la boîte */
+    height: 250px; /* Ajuste automatiquement la hauteur */
+  }
+}
+/* Ajout d'espace sous les boîtes sur mobile */
+@media (max-width: 640px) {
+  .box-container {
+    margin-bottom: 50px; /* Ajoute un espace sous la dernière boîte */
+  }
+
+  footer {
+    margin-top: 20px; /* Optionnel : ajoute de l'espace supplémentaire au footer */
+  }
+}
+:root {
+  /* Réglages globaux */
+  --logo-size-landscape: 180px; /* Taille du logo en mode paysage */
+  --logo-top-landscape: 40%; /* Position verticale du logo en mode paysage */
+  --logo-left-landscape: 90%; /* Position horizontale du logo en mode paysage */
+
+  --hero-text-top-landscape: 50%; /* Position verticale du texte principal en mode paysage */
+  --hero-text-left-landscape: 50%; /* Position horizontale du texte principal en mode paysage */
+  
+  --logo-size-portrait: 300px; /* Taille du logo en mode portrait */
+  --logo-top-portrait: 30%; /* Position verticale du logo en mode portrait */
+  --logo-left-portrait: 50%; /* Position horizontale du logo en mode portrait */
+
+  --hero-text-top-portrait: 55%; /* Position verticale du texte principal en mode portrait */
+  --hero-text-left-portrait: 50%; /* Position horizontale du texte principal en mode portrait */
+}
+/* Mode Paysage (Landscape) */
+ @media (min-width: 641px) and (max-width: 1024px) and (orientation: landscape) {
+  .category-box:nth-child(1) img {
+    content: url('./images/landscape-salon.jpg'); /* Image spécifique pour mode paysage */
+  }
+
+  .category-box:nth-child(2) img {
+    content: url('./images/landscape-prestations.jpg');
+  }
+
+  .category-box:nth-child(3) img {
+    content: url('./images/landscape-galerie.jpg');
+  }
+
+  .category-box:nth-child(4) img {
+    content: url('./images/landscape-contact.jpg');
+  }
+}
+
+/* Mode Portrait */
+@media (min-width: 641px) and (max-width: 1024px) and (orientation: portrait) {
+  .category-box:nth-child(1) img {
+    content: url('./images/portrait-salon.jpg'); /* Image spécifique pour mode portrait */
+  }
+
+  .category-box:nth-child(2) img {
+    content: url('./images/portrait-prestations.jpg');
+  }
+
+  .category-box:nth-child(3) img {
+    content: url('./images/portrait-galerie.jpg');
+  }
+
+  .category-box:nth-child(4) img {
+    content: url('./images/portrait-contact.jpg');
+  }
+}
+
+
+/* Mode paysage (landscape) */
+@media (min-width: 641px) and (max-width: 1024px) and (orientation: landscape) {
+  .banner {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner .logo {
+    position: absolute;
+    top: var(--logo-top-landscape);
+    left: var(--logo-left-landscape);
+    transform: translate(-50%, -50%);
+    width: var(--logo-size-landscape);
+    height: var(--logo-size-landscape);
+    border-radius: 50%;
+  }
+
+  .banner .hero-text {
+    position: absolute;
+    top: var(--hero-text-top-landscape);
+    left: var(--hero-text-left-landscape);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
+
+/* Mode portrait */
+@media (min-width: 641px) and (max-width: 1024px) and (orientation: portrait) {
+  .banner {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner .logo {
+    position: absolute;
+    top: var(--logo-top-portrait);
+    left: var(--logo-left-portrait);
+    transform: translate(-50%, -50%);
+    width: var(--logo-size-portrait);
+    height: var(--logo-size-portrait);
+    border-radius: 50%;
+  }
+
+  .banner .hero-text {
+    position: absolute;
+    top: var(--hero-text-top-portrait);
+    left: var(--hero-text-left-portrait);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-text h2 {
+    font-size: 4rem; /* Taille plus petite pour le mode portrait */
+    margin-bottom: 8px;
+  }
+
+  .hero-text p {
+    font-size: 1,2rem;
+    margin-top: 8px;
   }
 }
