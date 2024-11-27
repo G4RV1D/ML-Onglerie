@@ -183,14 +183,14 @@ footer p {
   :root {
     /* Réglages spécifiques au mobile */
     --mobile-logo-top: 40%; /* Position verticale spécifique */
-    --mobile-logo-left: 17%; /* Centré horizontalement */
+    --mobile-logo-left: 15%; /* Centré horizontalement */
     --mobile-logo-size: 280px; /* Taille du logo sur mobile */
 
-    --mobile-hero-text-top: 70%; /* Position verticale spécifique au texte */
+    --mobile-hero-text-top: 75%; /* Position verticale spécifique au texte */
     --mobile-hero-text-left: 50%; /* Centré horizontalement */
 
     --mobile-menu-top: 28px; /* Position verticale du menu hamburger */
-    --mobile-menu-right: 320px; /* Position horizontale du menu hamburger */
+    --mobile-menu-right: 120px; /* Position horizontale du menu hamburger */
 
     --mobile-banner-height: 100vh; /* Bannière pleine hauteur sur mobile */
   }
